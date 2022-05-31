@@ -1,0 +1,5 @@
+from prom/prometheus:v2.22.0
+ADD Prometheus.yaml /prometheus
+RUN ls
+workdir /prometheus
+ENTRYPOINT prometheus --config.file=Prometheus.yaml
