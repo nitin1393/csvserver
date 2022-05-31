@@ -1,0 +1,31 @@
+docker run -itd --name=infracloud  -p 9393:9393 infracloudio/csvserver
+
+
+2022/05/29 08:59:02 error while reading the file "/csvserver/inputdata": open /csvserver/inputdata: no such file or directory
+
+
+
+
+docker cp inputdata ff49e2aa89f6:/csvserver/inputdata
+
+docker commit ff49e2aa89f6 infracloudio/csvserver
+
+
+docker run -itd --name=infracloud infracloudio/csvserver
+
+docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS      NAMES
+2e621995ca3c   infracloudio/csvserver   "/csvserver/csvserver"   4 minutes ago   Up 4 minutes   9300/tcp   infracloud
+(reverse-i-search)`ex': docker exec -it 07aceaa4697a -- bash
+
+
+[root@ip-172-31-29-241 ~]# docker stop 2e621995ca3c
+2e621995ca3c
+[root@ip-172-31-29-241 ~]# docker rm 2e621995ca3c
+2e621995ca3c
+[root@ip-172-31-29-241 ~]# 
+
+
+
+docker run -itd --name=infracloud -p 9393:9300 infracloudio/csvserver
+
